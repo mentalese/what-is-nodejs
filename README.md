@@ -143,14 +143,12 @@ https://nodejs.dev/learn/understanding-javascript-promises
 - calling the respective callback functions (passed to then and catch) upon finishing.
 
 
+### 기타
 
 자바스크립트가 싱글스레드 언어라는것은 어디에 명시되어 있나?
 명시 되어 있지는 않다. 다만 자바스크립트를 런타임이 이벤트 loop를 싱글 스레드로 구현을 해 놓은 것이다.
 
-node.js 프로그램 자세한  실행 순서
-
-
-
+### 강의 순서 요약
 1. node.js 라는것은 무엇인가? 
    1. 정의 해석, 런타임, 엔진
    2. v8
@@ -177,3 +175,5 @@ node.js 프로그램 자세한  실행 순서
    4. OS delegation (https)
    5. 복합 예제
    
+### 강의 추천
+https://www.udemy.com/course/advanced-node-for-developers 👍
