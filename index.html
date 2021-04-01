@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>what is node.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<a href="https://nodejs.org/">
+							<img src="https://nodejs.dev/static/nodejs-logo-light-mode-d8cbf6c670c6befc286bc5c456b20f39.svg" alt="node.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+						</a>
+						<h3>Node.js에 대해서 알아보기</h3>
+						<p>
+							<small>by <a href="mailto:mentalese@gmail.com">mentalese</a></small>
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Node.js ?</h2>
+						<p class="fragment">
+							<a href="https://nodejs.org/ko/">Node.js®는 Chrome V8 JavaScript 엔진으로 빌드된 JavaScript 런타임입니다.</a>
+						</p>						
+						<p class="fragment">
+							<a href="https://nodejs.org/en/">Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.</a>
+						</p>	
+					</section>	
+				</section>		
+			    <section>
+					<section data-background-iframe="https://v8.dev/" data-background-interactive>
+						<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+							<h2><a href="https://v8.dev/">V8 JavaScript engine</a></h2>
+							<p class="fragment">
+								V8 is Google’s open source high-performance <span class="fragment highlight-red">JavaScript</span> and WebAssembly <span class="fragment highlight-red">engine</span>, written in C++. It is used in Chrome and in Node.js, among others.
+								It <span class="fragment highlight-red">implements ECMAScript</span> and WebAssembly, and runs on Windows 7 or later, macOS 10.12+, and Linux systems that use x64, IA-32, ARM, or MIPS processors. V8 can run standalone, or can be embedded into any C++ application.
+							</p>																		
+						</div>						
+					</section>
+
+					<section data-background-iframe="https://v8.dev/docs" data-background-interactive>
+						<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+							<h2><a href="https://v8.dev/">V8 JavaScript engine</a></h2>
+							<p class="fragment">
+								<span class="fragment highlight-red">V8 compiles and executes JavaScript source code</span>, handles memory allocation for objects, and garbage collects objects it no longer needs.
+							</p>													
+						</div>						
+					</section>					
+
+					<section>
+						<h2>engine ?</h2>
+						<p><a href="https://whatis.techtarget.com/definition/engine">In computer programming, an engine is a program that performs a core or essential function for other programs. Engines are used in operating systems, subsystems or application programs to coordinate the overall operation of other programs.</a> </p>
+					</section>
+
+					<section>
+						<h2>runtime ?</h2>
+						<p><a href="https://en.wikipedia.org/wiki/Runtime_system">Most programming languages have some form of runtime system that provides an environment in which programs run</a></p>
+					</section>										
+				</section>
+				<section>
+					<section>
+						<h2>V8이 다 하는거 아님?</h2>
+						<p class="fragment">javascript 자체에는 File System, HTTP, NET 등을 접근하고 다룰수 있는 기능이 없음! </p>
+						<p class="fragment">Node.js 에서 해당 기능을 구현가능하도록 <a href="https://nodejs.org/api/">standard libray를 제공</a></p>
+						<p class="fragment"><a href="https://github.com/nodejs/node">node.js 소스를 보자</a></p>
+						<p class="fragment"><span class="fragment highlight-red">libuv</span>, zlib등의 라이브러리도 사용</a></p>
+					</section>					
+					<section>						
+						<h2>Node.js ?</h2>
+						<p>
+							서버측 자원에 접근 가능한 프로그래밍 인터페이스 제공,
+							node 명령어로 실행을 하면 V8을 통해 자바스크립트를 해석하고 실행
+						</p>
+					</section>						
+				</section>
+				<section>
+					<section>
+						<h2>그래서, helloworld는 언제하는데?</h2>
+						<pre class="fragment"><code class="javascript" data-trim contenteditable style="font-size: 14px;">
+							const http = require('http')
+
+							const hostname = '127.0.0.1'
+							const port = 8888
+							
+							const server = http.createServer((req, res) => {
+								res.statusCode = 200
+								res.setHeader('Content-Type', 'text/plain')
+								res.end('Hello World!\n')
+							})
+							
+							server.listen(port, hostname, () => {
+								console.log(`Server running at http://${hostname}:${port}/`)
+							})
+							
+							console.log('hahaha')
+						</code></pre>
+						<p class="fragment">일단 보고만 넘어가자!</p>
+					</section>
+					<section>
+						<h2>Node.js 설치</h2>
+						<p class="fragment"><a href="https://nodejs.org/en/">다운로드를 하러 가보자</a></p>
+					</section>
+					<section data-background-iframe="https://nodejs.org/en/" data-background-interactive>
+						<p>
+							<span style="display: inline-block; background-color: darkred;" class="fragment fade-right">LTS </span>
+							<span style="display: inline-block; background-color: darkred;" class="fragment fade-up">Current</span>
+						</p>
+					</section>	
+					<section>
+						<h1>다운로드 말고 nvm!</h1>
+						<p><a href="https://github.com/nvm-sh/nvm">https://github.com/nvm-sh/nvm</a></p>
+					</section>
+					<section>
+						<pre><code class="bash" data-trim contenteditable style="font-size: 18px;">
+							nvm ls-remote --lts  # 설치할 버전 확인
+							nvm install {version} # 설치
+							nvm current # 현재 사용하는 버전 확인
+							nvm use {version} # 특정 버전으로 사용
+						</code></pre>
+					</section>			
+					<section>
+						<h1>실행!!!</h1>
+						<p class="fragment">
+							<pre><code class="bash" data-trim contenteditable style="font-size: 18px;">
+								node helloworld.js
+							</code></pre>
+						</p>
+						<p class="fragment">node.js 끝!!!</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>코드를 좀 다시 보자!</h2>
+						<pre class="fragment"><code class="javascript" data-trim style="font-size: 14px;" data-line-numbers="1">
+							const http = require('http')
+
+							const hostname = '127.0.0.1'
+							const port = 8888
+							
+							const server = http.createServer((req, res) => {
+								res.statusCode = 200
+								res.setHeader('Content-Type', 'text/plain')
+								res.end('Hello World!\n')
+							})
+							
+							server.listen(port, hostname, () => {
+								console.log(`Server running at http://${hostname}:${port}/`)
+							})
+							
+							console.log('hahaha')
+						</code></pre>						
+					</section>					
+					<section>
+						<h2>npm으로 외부 모듈도 설치해 보자</h2>
+						<p class="fragment"><span class="fragment highlight-red">npm</span> is the standard package manager for Node.js.</p>
+					</section>
+					<section data-background-iframe="https://nodejs.dev/learn/an-introduction-to-the-npm-package-manager" data-background-interactive>						
+					</section>
+					<section>
+						<h2>패키지를 어디서 찾는데?</h2>
+						<p class="fragment"><a href="https://www.npmjs.com/">https://www.npmjs.com/</a></p>
+					</section>					
+					<section>
+						<p class="fragment">
+							<pre><code class="bash" data-trim contenteditable style="font-size: 18px;">
+								npm search {모듈이름}  # 모듈 찾아보기
+								npm install {모듈이름} # 설치
+								npm install [-g] {모듈이름} # 설치
+								npm remove [-g] {모듈이름} # 삭제								
+							</code></pre>
+						</p>
+					</section>
+					<section>
+						<h2>npm init</h2>
+						<h1 class="fragment">package.json 생성</h1>
+						<p class="fragment">패키지의 중요 정보를 담고 있음. <a href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json">https://docs.npmjs.com/cli/v7/configuring-npm/package-json</a></p>
+					</section>
+					<section>
+						<h2>패키지 버전관리 잘해야함!</h2>						
+						<p class="fragment"><a href="https://docs.npmjs.com/cli/v7/using-npm/semver#versions">https://docs.npmjs.com/cli/v7/using-npm/semver#versions</a></p>											
+						<p class="fragment"><a href="https://nodejs.dev/learn/the-package-lock-json-file">https://nodejs.dev/learn/the-package-lock-json-file</a></p>											
+					</section>					
+				</section>
+				<section>
+					<section>
+						<h2>코드를 좀만 더 다시 보자!</h2>
+						<pre class="fragment"><code class="javascript" data-trim style="font-size: 14px;" data-line-numbers="6-10|12-14">
+							const http = require('http')
+
+							const hostname = '127.0.0.1'
+							const port = 8888
+							
+							const server = http.createServer((req, res) => {
+								res.statusCode = 200
+								res.setHeader('Content-Type', 'text/plain')
+								res.end('Hello World!\n')
+							})
+							
+							server.listen(port, hostname, () => {
+								console.log(`Server running at http://${hostname}:${port}/`)
+							})
+							
+							console.log('hahaha')
+						</code></pre>						
+					</section>
+					<section>
+						<h2>왜 callback 을 사용 하는가?</h2>
+						<p class="fragment"><a href="https://en.wikipedia.org/wiki/JavaScript">Javascript의 탄생과 Netscape browser</a></p>
+						<p class="fragment"><a href="https://en.wikipedia.org/wiki/Event-driven_programming">Event-Driven Programming</a></p>
+						<p class="fragment">GUI를 구현하는 프로그램에서 event-loop와 callback은 필수적임</p>
+					</section>
+					<section>
+						<p>
+							<img src="data:image/jpeg;base64,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">
+						</p>
+					</section>
+					<section>
+						<h2>왜 callback 을 사용 하는가?</h2>
+						<p class="fragment"><a href="https://developer.mozilla.org/ko/docs/Learn/JavaScript/Asynchronous/Concepts">asynchronous programming</a></p>
+						<p class="fragment">Javascript가 싱글 스레드라서 그래.....</p>
+						<p class="fragment">???????</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Node.js 의 event-loop</h2>
+						<h2 class="fragment r-fit-text">node.js도 싱글 스레드 인가??</h2>
+						<h2 class="fragment r-fit-text" style="color: darkred;">node.js의 event-loop은 single-thread로 구현되어 있다.</h2>
+					</section>
+					<section>
+						<h2>Node.js 의 event-loop 에 대해서 알아보자</h2>
+					</section>
+					<section data-background-iframe="https://nodejs.dev/learn/the-nodejs-event-loop" data-background-interactive>
+					</section>					
+					<section>
+						<h2>Node.js는 libuv를 이용해서 event-loop을 구현한다. </h2>
+						<p class="fragment"><a href="https://medium.com/swlh/a-short-introduction-to-node-js-event-loop-558f6f2c2af7">A Short Introduction to Node.js Event Loop</a></p>
+						<p class="fragment"><a href="https://github.com/nodejs/node/tree/master/src#event-loop">The other major dependency of Node.js is libuv, providing the event loop and other operation system abstractions to Node.js.</a></p>						
+					</section>
+					<section>
+						<h2>Node.js의 스레드가 몇개인지 예제를 통해 직접 확인해보자.</h2>
+					</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
